@@ -1,0 +1,113 @@
+:root {
+  /* Primary Colors  */
+  --clr-primary-400: hsl(31, 77%, 52%);
+  --clr-primary-700: hsl(184, 100%, 22%);
+  --clr-primary-800: hsl(179, 100%, 13%);
+
+  /* Neutral Colors */
+  --clr-neutral-100: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-400: hsl(0, 0%, 95%);
+
+  /* Font Family */
+  --ff-default: 'Lexend Deca';
+  --ff-secondary: 'Big Shoulders Display';
+
+  /* Font Size */
+  --fs-300: 1rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem;
+  --fs-800: 2rem;
+  --fs-900: 2.5rem;
+
+  /* Font Weight */
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  display: grid;
+  font-family: var(--ff-default);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-100);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5rem 0;
+  margin-inline: 2rem;
+  --padding: 3rem;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .card {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 60rem;
+  }
+}
+
+.card > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5rem;
+  padding: var(--padding);
+}
+
+.card div[data-spacing='large'] {
+  display: grid;
+  gap: 2rem;
+}
+
+.card h2 {
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-900);
+  color: var(--clr-neutral-400);
+  text-transform: uppercase;
+}
+
+.card p {
+  line-height: var(--fs-600);
+}
+
+.sedans {
+  background-color: var(--clr-primary-400);
+  --section-color: var(--clr-primary-400);
+}
+
+.suvs {
+  background-color: var(--clr-primary-700);
+  --section-color: var(--clr-primary-700);
+}
+.luxury {
+  background-color: var(--clr-primary-800);
+  --section-color: var(--clr-primary-800);
+}
+
+button {
+  background-color: var(--clr-neutral-400);
+  border: 3px solid var(--clr-neutral-400);
+  padding: 1rem 2rem;
+  margin-inline: 0 auto;
+  border-radius: 10rem;
+  cursor: pointer;
+  color: var(--section-color);
+}
+
+button:hover {
+  color: var(--clr-neutral-400);
+  background-color: var(--section-color);
+}
